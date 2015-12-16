@@ -2,7 +2,9 @@
 $(document).ready(function(){
   $(".submit").on("click", function(event) {
     event.preventDefault();
+    // what was searched
     searchInput = $('#movie-search').val();
+    // call api for search results
     searchForMovie(searchInput);
   });
 });
@@ -14,17 +16,15 @@ function searchForMovie(keyword) {
       dataType: 'json',
       url: url
     }).done(function(response) {
-      results = response;
-      searchResults(results);
+      // run through function to append search results
+      searchResults(response);
     }).fail(function(response){
       console.log("Ajax get request failed.");
     });
   }
   function searchResults(movies) {
-    var listItems = movies.Search;
-  console.log(listItems);
-  for(var i = 0; i < listItems.length; i++) {
-      console.log(listItems[i]);
-      $('ul').append('<li>' + listItems[i].Title + '</li>');
+  for(var i = 0; i < movies.Search.length; i++) {
+    // append result title
+      $('ul').append('<li>' + movies.Search[i].Title + '</li>');
     }
 }
