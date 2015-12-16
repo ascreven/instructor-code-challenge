@@ -25,6 +25,6 @@ function searchForMovie(keyword) {
   function searchResults(movies) {
   for(var i = 0; i < movies.Search.length; i++) {
     // append result title
-      $('ul').append('<li>' + movies.Search[i].Title + '</li>');
+      $('ul').append('<li><div class="collapsible-header"><i class="material-icons">filter_drama</i>' + movies.Search[i].Title + '</div><div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div></li>');
     }
 }
