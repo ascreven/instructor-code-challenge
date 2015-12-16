@@ -4,7 +4,6 @@ $(document).ready(function(){
     event.preventDefault();
     searchInput = $('#movie-search').val();
     searchForMovie(searchInput);
-    console.log(searchInput);
   });
 });
 
@@ -16,8 +15,16 @@ function searchForMovie(keyword) {
       url: url
     }).done(function(response) {
       results = response;
-      console.log(results);
+      searchResults(results);
     }).fail(function(response){
       console.log("Ajax get request failed.");
     });
   }
+  function searchResults(movies) {
+    var listItems = movies.Search;
+  console.log(listItems);
+  for(var i = 0; i < listItems.length; i++) {
+      console.log(listItems[i]);
+      $('ul').append('<li>' + listItems[i].Title + '</li>');
+    }
+}
