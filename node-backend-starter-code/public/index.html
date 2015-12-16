@@ -3,7 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Instructor Challenge</title>
+
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <!-- custom style sheet -->
   <link rel="stylesheet" href="css/style.css">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
   <div class="browse">
@@ -15,12 +23,16 @@
     <select id="movie-select">
       <option value="">Select a movie...</option>
     </select>
-      <div id="movie-detail">
-        <ul>
-        </ul>
-      </div>
+    <div id="movie-detail">
+      <ul>
+      </ul>
     </div>
+  </div>
+  <!--Import jQuery before materialize.js-->
   <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+  <!-- materialize JavaScript -->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!-- custom JavaScript -->
   <script src="js/movie_browser.js"></script>
 </body>
 </html>
